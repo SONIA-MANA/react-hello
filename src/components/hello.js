@@ -12,3 +12,5 @@ return React.createElement(
     React.createElement('h1', null, 'Hello world')
     )
 }
+
+export default hello;

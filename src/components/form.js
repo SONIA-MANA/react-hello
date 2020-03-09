@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class form extends React.Componen {
+class form extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -28,7 +28,7 @@ class form extends React.Componen {
     }
 
     handleSubmit=event=> {
-        alert('${this.state.username} ${this.state.comments} ${this.state.topic}')
+        alert ('${this.state.username} ${this.state.comments} ${this.state.topic}');
         event.preventDefault()
     }
 
