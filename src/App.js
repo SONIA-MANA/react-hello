@@ -10,7 +10,7 @@ import Home from './Home';
 import Stuff from './Stuff';
 import Contact from './Contact';
 
-class Main extends Component {
+class App extends Component {
   render() {
     return (
       <HashRouter>
@@ -32,4 +32,4 @@ class Main extends Component {
   }
 }
 
-export default Main;
+export default App;

@@ -4,7 +4,7 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { Component } from 'react';
 
-class Nameform extends Component {
+class Contact extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -83,4 +83,4 @@ class Nameform extends Component {
 }
 
 
-export default Nameform;
+export default Contact;
