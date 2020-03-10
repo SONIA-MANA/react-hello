@@ -1,32 +1,35 @@
-import React, {component} from 'react'
-import './App.css';
-import greet from './components/greet.js'
-import hello from './components/hello.js'
-import message from './components/message.js'
-import counter from './components/counter.js'
-import list from './components/list.js'
-import form from './components/form.js'
+/* eslint-disable import/no-unresolved */
+/* eslint-disable react/prefer-stateless-function */
+import React, { Component } from 'react';
+import {
+  Route,
+  NavLink,
+  HashRouter,
+} from 'react-router-dom';
+import Home from './Home';
+import Stuff from './Stuff';
+import Contact from './Contact';
 
-
- class App extends component {
-   render(){
-     return (
-     <div className="App">
-       <form/>
-       <list/>
-       <message/>
-       <counter/>
-       <greet name="bruce"  heroName="Batman">
-         <p>you are welcome</p>
-       </greet>
-       <greet name="claire" heroName="Supermanman">
-         <button>Action</button>
-       </greet> 
-       <greet name="susan" heroName="Wonder Woman"/>
-       <hello/>
-     </div>
+class Main extends Component {
+  render() {
+    return (
+      <HashRouter>
+        <div>
+          <h1>Simple SPA</h1>
+          <ul className="header">
+            <li><NavLink to="/">Home</NavLink></li>
+            <li><NavLink to="/stuff">Stuff</NavLink></li>
+            <li><NavLink to="/contact">Contact</NavLink></li>
+          </ul>
+          <div className="content">
+            <Route path="/" component={Home} />
+            <Route path="/stuff" component={Stuff} />
+            <Route path="/contact" component={Contact} />
+          </div>
+        </div>
+      </HashRouter>
     );
   }
 }
 
-export default App;
+export default Main;
