@@ -13,69 +13,80 @@ class Contact extends Component {
       comments: '',
       Country: 'Kenya',
     };
+
+    this.handlefirstnameChange = this.handlefirstnameChange.bind(this);
+    this.handlelastnameChange = this.handlelastnameChange.bind(this);
+    this.handlecommentsChange = this.handlecommentsChange.bind(this);
+    this.handlecountryChange = this.handlecountryChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleUsernameChange(event) {
+  handlefirstnameChange = (event) => {
     this.setState({
-      username: event.target.value,
+      firstname: event.target.value,
     });
   }
 
-  handlecommentsChange(event) {
+  handlelastnameChange = (event) => {
+    this.setState({
+      lastname: event.target.value,
+    });
+  }
+
+  handlecommentsChange = (event) => {
     this.setState({
       comments: event.target.value,
     });
   }
 
-  handleTopicChange(event) {
+  handlecountryChange = (event) => {
     this.setState({
-      topic: event.target.value,
+      Country: event.target.value,
     });
   }
 
-  handleSubmit(event) {
-    alert(`A name was submitted: ${this.state.username}`);
+  handleSubmit = (event) => {
+    alert("Details submitted: ");
     event.preventDefault();
   }
 
   render() {
     return (
-      <form onSumbit={this.handleSubmit}>
+      <form onSubmit={this.handleSubmit}>
         <fieldset>
           <legend><h2><u>personal information:</u></h2></legend>
           <div>
             <label><h3>firstname:</h3></label>
             <input
               type="text"
-              value={this.state.username}
-              onChange={this.handleUsernameChange}
+              value={this.state.firstname}
+              onChange={this.handlefirstnameChange}
             />
           </div>
           <div>
-            <label><h3>lasttname:</h3></label>
+            <label><h3>lastname:</h3></label>
             <input
               type="text"
-              value={this.state.username}
-              onChange={this.handleUsernameChange}
+              value={this.state.lastname}
+              onChange={this.handlelastnameChange}
             />
           </div>
           <div>
             <label><h3>comments:</h3></label>
-            <input
-              type="textarea"
+            <textarea
               value={this.state.comments}
-              onChange={this.handleUsernameChange}
+              onChange={this.handlecommentsChange}
             />
           </div>
           <div>
             <label><h3>Country:</h3></label>
-            <select value={this.state.topic} onChange={this.handleTopicChange}>
+            <select value={this.state.Country} onChange={this.handlecountryChange}>
               <option value="Kenya">Kenya</option>
               <option value="Uganda">Uganda</option>
               <option value="Tanzania">Tanzania</option>
             </select>
           </div>
-          <button type="submit"><h3>submit</h3></button>
+          <button type="Submit">Submit</button>
         </fieldset>
       </form>
     );
